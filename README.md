@@ -16,14 +16,14 @@ There's also a default endpoint at `/` and any other routes will return a "Not f
 
 First, start the server on port 5000 by running `julia server.jl 5000` in this package folder.  The server is now running!  
 
-You can test the first endpoint by navigating to [http://localhost/echo/eyJNZXNzYWdlIjoiSGVsbG8hIn0=].  That funky-looking string is just the encoding for `{Message: "Hello!"}`.  If you don't believe me, you can use [this free Javascript REPL](https://repl.it/languages/javascript) to run the following and check the output.  
+You can test the first endpoint by navigating to http://localhost/echo/eyJNZXNzYWdlIjoiSGVsbG8hIn0=.  That funky-looking string is just the encoding for `{Message: "Hello!"}`.  If you don't believe me, you can use [this free Javascript REPL](https://repl.it/languages/javascript) to run the following and check the output.  
 
 ```javascript
 var obj = {Message: "Hello!"}
 console.log(btoa(JSON.stringify(obj)))
 ```
 
-You can test the second endpoint by going to [http://localhost/loglog/1234.234] or similar.  
+You can test the second endpoint by going to http://localhost/loglog/1234.234 or similar.  
 
 ## Running the server locally from inside Docker
 
@@ -35,7 +35,7 @@ Next, run `docker build -t sample-endpoints .` in this project folder. This may 
 docker run -i -t --rm -p 5000:5000 -e PORT=5000 sample-endpoints
 ```
 
-You can read about this plethora of options [here](https://docs.docker.com/engine/reference/run/) but basically it runs the server with the environment variable `PORT` set to 5000, and lets external connections on port 5000 into the container on the same port.  You can then connect to it using the same endpoints, but you will need to go to `http://192.168.99.100` rather than `localhost`.  This IP could be different depending on your Docker configuration.  
+You can read about this plethora of options [here](https://docs.docker.com/engine/reference/run/) but basically it runs the server with the environment variable `PORT` set to 5000, and lets external connections on port 5000 into the container on the same port.  You can then connect to it using the same endpoints, but you will need to go to http://192.168.99.100 rather than `localhost`.  This IP could be different depending on your Docker configuration.  
 
 Sometimes you may want to start up the image so you can connect to it rather than running the server immediately for debug.  You can do this with:
 
@@ -65,4 +65,4 @@ and then turn it on by scaling it to a single web dyno:
 heroku ps:scale web=1
 ```
 
-You should then be able to go to [https://sample-endpoints.herokuapp.com/loglog/12345] or similar to see it in action!  
+You should then be able to go to https://sample-endpoints.herokuapp.com/loglog/12345 or similar to see it in action!  
