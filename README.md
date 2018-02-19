@@ -1,4 +1,8 @@
-# Julia Heroku Endpoint demo
+# Deprecated
+
+See [Joseki.jl](https://github.com/amellnik/Joseki.jl) for an approach that uses the new HTTP.jl.  
+
+## Julia Heroku Endpoint demo
 
 This is a very simple example of a Julia-powered API that you can run locally or deploy to the [Heroku](http://heroku.com) hosting platform.  
 
